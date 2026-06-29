@@ -15,7 +15,8 @@ What I understood:
 - The browser loads all three files together.
 
 What I don't understand yet:
-- ...
+- The form is visible, but it does not add new items yet because JavaScript logic is not implemented.
+- I need to learn how form submit, DOM manipulation and event listeners work.
 
 AI helped me with:
 - everything
