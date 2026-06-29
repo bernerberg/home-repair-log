@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Repair Log</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <p class="eyebrow">Personal tool</p>
+      <h1>Home Repair Log</h1>
+      <p class="intro">
+        A simple app to track home devices, repairs, issues, warranty notes and maintenance history.
+      </p>
+    </header>
+
+    <section class="panel">
+      <h2>Add item</h2>
+
+      <form class="repair-form">
+        <label>
+          Item name
+          <input type="text" id="itemName" placeholder="Printer, MacBook, dishwasher..." />
+        </label>
+
+        <label>
+          Status
+          <select id="itemStatus">
+            <option value="working">Working</option>
+            <option value="broken">Broken</option>
+            <option value="needs-part">Needs part</option>
+            <option value="fixed">Fixed</option>
+          </select>
+        </label>
+
+        <label>
+          Note
+          <textarea id="itemNote" placeholder="What happened? What did you try?"></textarea>
+        </label>
+
+        <button type="submit">Add item</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Items</h2>
+      <div class="cards">
+        <article class="card">
+          <p class="status">Broken</p>
+          <h3>Printer</h3>
+          <p>Does not turn on. Need to check cable, fuse and power supply.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

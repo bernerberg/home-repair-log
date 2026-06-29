@@ -1,0 +1,1 @@
+console.log("Home Repair Log is connected.");
