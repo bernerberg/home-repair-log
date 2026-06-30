@@ -23,3 +23,29 @@ AI helped me with:
 
 Tomorrow:
 - Start understanding the HTML structure and improve the form/card layout.
+
+## Day 2
+
+What I did:
+- Added id="repairForm" to the form.
+- Added id="itemsList" to the cards container.
+- Added a second static card.
+- Added a working submit event listener in JavaScript.
+- The form now logs submitted data to the console.
+
+What I understood:
+- class is reusable and mostly used for styling.
+- id is unique and useful for JavaScript.
+- querySelector finds elements on the page.
+- addEventListener listens for user actions.
+- preventDefault stops the form from reloading the page.
+- .value gets the current value from an input, select or textarea.
+
+What I don't understand yet:
+- ...
+
+AI helped me with:
+- Understanding form submit and event.preventDefault.
+
+Tomorrow:
+- Start improving the interface and make the card layout cleaner.

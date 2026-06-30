@@ -9,20 +9,26 @@
 <body>
   <main class="app">
     <header class="app-header">
-      <p class="eyebrow">Personal tool</p>
+      <p class="eyebrow">Bernerbergs&rsquo;</p>
       <h1>Home Repair Log</h1>
       <p class="intro">
-        A simple app to track home devices, repairs, issues, warranty notes and maintenance history.
+        A simple app to track home devices, repairs, issues, warranty notes 
+        <span class="nowrap">and maintenance history.</span>
       </p>
     </header>
 
     <section class="panel">
       <h2>Add item</h2>
 
-      <form class="repair-form">
+      <form class="repair-form" id="repairForm">
         <label>
           Item name
-          <input type="text" id="itemName" placeholder="Printer, MacBook, dishwasher..." />
+          <input
+  type="text"
+  id="itemName"
+  placeholder="Printer, MacBook, dishwasher..."
+  required
+/>
         </label>
 
         <label>
@@ -37,7 +43,10 @@
 
         <label>
           Note
-          <textarea id="itemNote" placeholder="What happened? What did you try?"></textarea>
+          <textarea
+  id="itemNote"
+  placeholder="What happened? What did you try?"
+></textarea>
         </label>
 
         <button type="submit">Add item</button>
@@ -46,13 +55,19 @@
 
     <section class="panel">
       <h2>Items</h2>
-      <div class="cards">
-        <article class="card">
-          <p class="status">Broken</p>
-          <h3>Printer</h3>
-          <p>Does not turn on. Need to check cable, fuse and power supply.</p>
-        </article>
-      </div>
+  <div class="cards" id="itemsList">
+  <article class="card">
+    <p class="status">Broken</p>
+    <h3>Printer</h3>
+    <p>Does not turn on. Need to check cable, fuse and power supply.</p>
+  </article>
+
+  <article class="card">
+    <p class="status status--working">Working</p>
+    <h3>MacBook</h3>
+    <p>Battery and screen are fine. Need to clean keyboard and check storage.</p>
+  </article>
+</div>
     </section>
   </main>
 

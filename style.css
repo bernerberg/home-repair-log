@@ -41,6 +41,10 @@ h1 {
   line-height: 1.6;
 }
 
+.intro .nowrap {
+  white-space: nowrap;
+}
+
 .panel {
   background: #181b24;
   border: 1px solid #2a2f3d;
@@ -141,4 +145,9 @@ button:hover {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.status--working {
+  background: #203528;
+  color: #8ef0a4;
 }
