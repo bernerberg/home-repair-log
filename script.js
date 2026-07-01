@@ -1,11 +1,13 @@
 console.log("Home Repair Log is connected.");
 
+// Находим важные элементы на странице
 const repairForm = document.querySelector("#repairForm");
 const itemNameInput = document.querySelector("#itemName");
 const itemStatusSelect = document.querySelector("#itemStatus");
 const itemNoteTextarea = document.querySelector("#itemNote");
 const itemsList = document.querySelector("#itemsList");
 
+// Словарь: техническое значение статуса → красивый текст для пользователя
 const statusLabels = {
   working: "Working",
   broken: "Broken",
@@ -13,32 +15,71 @@ const statusLabels = {
   fixed: "Fixed",
 };
 
+const items = [
+  {
+    name: "Printer",
+    status: "broken",
+    note: "Does not turn on. Need to check cable, fuse and power supply.",
+  },
+  {
+    name: "MacBook",
+    status: "working",
+    note: "Battery and screen are fine. Need to clean keyboard and check storage.",
+  },
+];
+
+renderItems();
+
+// Ждём отправки формы
 repairForm.addEventListener("submit", function (event) {
+  // Не даём браузеру перезагрузить страницу
   event.preventDefault();
 
-  const itemName = itemNameInput.value;
-  const itemStatus = itemStatusSelect.value;
-  const itemNote = itemNoteTextarea.value;
+  const newItem = {
+    name: itemNameInput.value,
+    status: itemStatusSelect.value,
+    note: itemNoteTextarea.value,
+  };
 
-  addItemCard(itemName, itemStatus, itemNote);
+  items.push(newItem);
 
+  renderItems();
+
+  // Очищаем форму
   repairForm.reset();
 });
 
+function renderItems() {
+  itemsList.innerHTML = "";
+
+  for (const item of items) {
+    addItemCard(item.name, item.status, item.note);
+  }
+}
+
+// Функция, которая создаёт новую карточку
 function addItemCard(name, status, note) {
+  // Создаём <article>
   const card = document.createElement("article");
   card.classList.add("card");
 
+  // Создаём <p> для статуса
   const statusElement = document.createElement("p");
   statusElement.classList.add("status", `status--${status}`);
   statusElement.textContent = statusLabels[status];
 
+  // Создаём <h3> для названия
   const titleElement = document.createElement("h3");
   titleElement.textContent = name;
 
+  card.append(statusElement, titleElement);
+
+if (note) {
   const noteElement = document.createElement("p");
   noteElement.textContent = note;
+  card.append(noteElement);
+}
 
-  card.append(statusElement, titleElement, noteElement);
+  // Кладём карточку в список на странице
   itemsList.append(card);
 }

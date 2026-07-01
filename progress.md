@@ -75,3 +75,30 @@ AI helped me with:
 
 Tomorrow:
 - Start organizing items as data, not just visual cards.
+
+## Day 4
+
+What I did:
+- Removed static item cards from HTML.
+- Moved default items into a JavaScript array.
+- Created item objects with name, status and note.
+- Added the renderItems function.
+- The page now renders cards from JavaScript data.
+- Added a simple check so empty notes are not rendered.
+
+What I understood:
+- An array is a list of values.
+- An object can describe one item with multiple properties.
+- items.push adds a new object to the array.
+- renderItems redraws the page from the current data.
+- innerHTML = "" clears the current list before rendering again.
+- The page state still disappears after refresh because it is not saved yet.
+
+What I don't understand yet:
+- ...
+
+AI helped me with:
+- Refactoring the app from static HTML cards to data-driven rendering.
+
+Tomorrow:
+- Add delete buttons and learn how to remove items from an array.
