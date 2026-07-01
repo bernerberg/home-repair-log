@@ -126,10 +126,28 @@ button:hover {
   margin: 0;
   padding: 4px 10px;
   border-radius: 999px;
-  background: #3a2430;
-  color: #ff9ab5;
   font-size: 12px;
   font-weight: 700;
+}
+
+.status--broken {
+  background: #3a2430;
+  color: #ff9ab5;
+}
+
+.status--working {
+  background: #203528;
+  color: #8ef0a4;
+}
+
+.status--needs-part {
+  background: #3a3320;
+  color: #ffd36e;
+}
+
+.status--fixed {
+  background: #20313a;
+  color: #8edcff;
 }
 
 @media (min-width: 720px) {
@@ -145,9 +163,4 @@ button:hover {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-.status--working {
-  background: #203528;
-  color: #8ef0a4;
 }

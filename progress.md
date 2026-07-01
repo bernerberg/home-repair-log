@@ -49,3 +49,29 @@ AI helped me with:
 
 Tomorrow:
 - Start improving the interface and make the card layout cleaner.
+
+## Day 3
+
+What I did:
+- Added CSS classes for different item statuses.
+- Added itemsList selection in JavaScript.
+- Created the addItemCard function.
+- The form now creates a new card on the page.
+- The form resets after submit.
+
+What I understood:
+- JavaScript can create HTML elements with document.createElement.
+- classList.add adds CSS classes to an element.
+- textContent puts text inside an element.
+- append puts elements inside another element.
+- A function can receive values and use them to perform a task.
+- New cards disappear after page refresh because they are not saved yet.
+
+What I don't understand yet:
+- ...
+
+AI helped me with:
+- Creating cards dynamically with JavaScript.
+
+Tomorrow:
+- Start organizing items as data, not just visual cards.
