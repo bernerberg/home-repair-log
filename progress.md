@@ -102,3 +102,28 @@ AI helped me with:
 
 Tomorrow:
 - Add delete buttons and learn how to remove items from an array.
+
+## Day 5
+
+What I did:
+- Added a Delete button to every item card.
+- Passed the item index into addItemCard.
+- Created the deleteItem function.
+- Used splice to remove one item from the items array.
+- Re-rendered the list after deleting an item.
+
+What I understood:
+- Array indexes start at 0.
+- The index tells JavaScript which item is being deleted.
+- splice(index, 1) removes one item from the array.
+- After changing the array, renderItems updates the page.
+- The UI should be based on data, not the other way around.
+
+What I don't understand yet:
+- ...
+
+AI helped me with:
+- Understanding how deleting from an array updates the interface.
+
+Tomorrow:
+- Start saving items with localStorage so they stay after page refresh.
