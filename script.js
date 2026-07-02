@@ -7,6 +7,8 @@ const itemStatusSelect = document.querySelector("#itemStatus");
 const itemNoteTextarea = document.querySelector("#itemNote");
 const itemsList = document.querySelector("#itemsList");
 
+const storageKey = "homeRepairLogItems";
+
 // Словарь: техническое значение статуса → красивый текст для пользователя
 const statusLabels = {
   working: "Working",
@@ -15,7 +17,7 @@ const statusLabels = {
   fixed: "Fixed",
 };
 
-const items = [
+const defaultItems = [
   {
     name: "Printer",
     status: "broken",
@@ -27,6 +29,8 @@ const items = [
     note: "Battery and screen are fine. Need to clean keyboard and check storage.",
   },
 ];
+
+const items = loadItems();
 
 renderItems();
 
@@ -43,6 +47,7 @@ repairForm.addEventListener("submit", function (event) {
 
   items.push(newItem);
 
+  saveItems();
   renderItems();
 
   // Очищаем форму
@@ -94,5 +99,20 @@ function addItemCard(name, status, note, index) {
 
 function deleteItem(index) {
   items.splice(index, 1);
+  saveItems();
   renderItems();
+}
+
+function saveItems() {
+  localStorage.setItem(storageKey, JSON.stringify(items));
+}
+
+function loadItems() {
+  const savedItems = localStorage.getItem(storageKey);
+
+  if (savedItems) {
+    return JSON.parse(savedItems);
+  }
+
+  return defaultItems;
 }

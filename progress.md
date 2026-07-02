@@ -127,3 +127,30 @@ AI helped me with:
 
 Tomorrow:
 - Start saving items with localStorage so they stay after page refresh.
+
+## Day 6
+
+What I did:
+- Added localStorage saving.
+- Created the saveItems function.
+- Created the loadItems function.
+- Added a storageKey for the app data.
+- Items now stay after page refresh.
+- Deleted items also stay deleted after page refresh.
+
+What I understood:
+- localStorage saves data inside the browser.
+- localStorage stores strings, not arrays or objects.
+- JSON.stringify turns an array/object into a string.
+- JSON.parse turns a saved string back into JavaScript data.
+- saveItems should run after adding or deleting items.
+- loadItems runs when the page loads.
+
+What I don't understand yet:
+- ...
+
+AI helped me with:
+- Understanding how browser storage works.
+
+Tomorrow:
+- Improve the app interface and add an empty state when there are no items.
