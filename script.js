@@ -74,12 +74,12 @@ function addItemCard(name, status, note) {
 
   card.append(statusElement, titleElement);
 
-if (note) {
+if (note.trim()) {
   const noteElement = document.createElement("p");
   noteElement.textContent = note;
   card.append(noteElement);
 }
 
-  // Кладём карточку в список на странице
-  itemsList.append(card);
+// Кладём карточку в список на странице
+itemsList.append(card);
 }
