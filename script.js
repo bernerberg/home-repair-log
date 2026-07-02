@@ -52,34 +52,47 @@ repairForm.addEventListener("submit", function (event) {
 function renderItems() {
   itemsList.innerHTML = "";
 
-  for (const item of items) {
-    addItemCard(item.name, item.status, item.note);
+  for (let index = 0; index < items.length; index++) {
+    const item = items[index];
+
+    addItemCard(item.name, item.status, item.note, index);
   }
 }
 
 // Функция, которая создаёт новую карточку
-function addItemCard(name, status, note) {
-  // Создаём <article>
+function addItemCard(name, status, note, index) {
   const card = document.createElement("article");
   card.classList.add("card");
 
-  // Создаём <p> для статуса
   const statusElement = document.createElement("p");
   statusElement.classList.add("status", `status--${status}`);
   statusElement.textContent = statusLabels[status];
 
-  // Создаём <h3> для названия
   const titleElement = document.createElement("h3");
   titleElement.textContent = name;
 
   card.append(statusElement, titleElement);
 
-if (note.trim()) {
-  const noteElement = document.createElement("p");
-  noteElement.textContent = note;
-  card.append(noteElement);
+  if (note.trim()) {
+    const noteElement = document.createElement("p");
+    noteElement.textContent = note;
+    card.append(noteElement);
+  }
+
+  const deleteButton = document.createElement("button");
+  deleteButton.type = "button";
+  deleteButton.classList.add("delete-button");
+  deleteButton.textContent = "Delete";
+
+  deleteButton.addEventListener("click", function () {
+    deleteItem(index);
+  });
+
+  card.append(deleteButton);
+  itemsList.append(card);
 }
 
-// Кладём карточку в список на странице
-itemsList.append(card);
+function deleteItem(index) {
+  items.splice(index, 1);
+  renderItems();
 }

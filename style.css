@@ -164,3 +164,17 @@ button:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.delete-button {
+  margin-top: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: transparent;
+  color: #ff9ab5;
+  border: 1px solid #5a2d3a;
+  font-size: 13px;
+}
+
+.delete-button:hover {
+  background: #3a2430;
+}
